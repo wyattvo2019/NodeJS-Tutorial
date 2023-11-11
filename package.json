@@ -1,0 +1,16 @@
+{
+  "name": "upper-case",
+  "version": "3.0.0",
+  "description": "``` ##Node.js is an open source server environment ##Node.js is free ##Node.js runs on various platforms (Windows, Linux, Unix, Mac OS X, etc.) ##Node.js uses JavaScript on the server ##Node.js uses asynchronous programming ##Node.js runs single-threaded, non-blocking, asynchronous programming, which is very memory efficient.",
+  "main": "myfirst.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "formidable": "^3.5.1",
+    "mysql": "^2.18.1",
+    "upper-case": "^3.0.0"
+  }
+}
