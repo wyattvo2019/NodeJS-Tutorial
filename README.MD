@@ -1,4 +1,4 @@
-```
+
 Main file is myfirst.js
 ##Node.js is an open source server environment
 ##Node.js is free
@@ -16,17 +16,16 @@ Main file is myfirst.js
 #What is a Module in Node.js?
 ##Consider modules to be the same as JavaScript libraries.
 ##A set of functions you want to include in your application.
-
-# Read file
+#Read file
 ##fs.readFile()
 
-# Create file
-## appendFile()
-## open()
-## writeFile()
+#Create file
+##appendFile()
+##open()
+##writeFile()
 
-# Update file
-## appendFile()
+#Update file
+##appendFile()
 ## writeFile()
 
 # Delete File
@@ -102,12 +101,3 @@ Main file is myfirst.js
 ### JOIN  var sql = "SELECT users.name AS user, products.name AS favorite FROM users JOIN products ON users.favorite_product = products.id";
 ### LEFT JOIN var sql = "SELECT users.name AS user, products.name AS favorite FROM users LEFT JOIN products ON users.favorite_product = products.id";
 ### RIGHT JOIN   var sql = "SELECT users.name AS user, products.name AS favorite FROM users RIGHT JOIN products ON users.favorite_product = products.id";
-
-
-
-
-
-
-
-
-```
