@@ -316,6 +316,218 @@
 // ======================================
 // ======= 18. SQL NodeJS Create TABLE
 // ======================================
+// var mysql = require('mysql');
+// var con = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "password",
+//   database: "mydb"
+// });
+// con.connect(function(err) {
+//   if (err) throw err;
+//   console.log("Connected!");
+//   var sql = "CREATE TABLE customers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255))";
+//   con.query(sql, function (err, result) {
+//     if (err) throw err;
+//     console.log("Table created");
+//   });
+// });
+
+// ======================================
+// ======= 19. SQL NodeJS Insert Into TABLE
+// ======================================
+// var mysql = require('mysql');
+// var con = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "password",
+//   database: "mydb"
+// });
+// con.connect(function(err) {
+//   if (err) throw err;
+//   console.log("Connected!");
+//   var sql = "INSERT INTO customers (name, address) VALUES ('Company Inc', 'Highway 37')";
+//   con.query(sql, function (err, result) {
+//     if (err) throw err;
+//     console.log("1 record inserted");
+//   });
+// });
+
+// ======================================
+// ======= 20. SQL NodeJS Insert Mutiple Records Into TABLE
+// ======================================
+// var mysql = require('mysql');
+// var con = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "password",
+//   database: "mydb"
+// });
+// con.connect(function(err) {
+//   if (err) throw err;
+//   console.log("Connected!");
+//   var sql = "INSERT INTO customers (name, address) VALUES ?";
+//   var values = [
+//     ['John', 'Highway 71'],
+//     ['Peter', 'Lowstreet 4'],
+//     ['Amy', 'Apple st 652'],
+//     ['Hannah', 'Mountain 21'],
+//     ['Michael', 'Valley 345'],
+//     ['Sandy', 'Ocean blvd 2'],
+//     ['Betty', 'Green Grass 1'],
+//     ['Richard', 'Sky st 331'],
+//     ['Susan', 'One way 98'],
+//     ['Vicky', 'Yellow Garden 2'],
+//     ['Ben', 'Park Lane 38'],
+//     ['William', 'Central st 954'],
+//     ['Chuck', 'Main Road 989'],
+//     ['Viola', 'Sideway 1633']
+//   ];
+//   con.query(sql, [values], function (err, result) {
+//     if (err) throw err;
+//     console.log("Number of records inserted: " + result.affectedRows);
+//   });
+// });
+
+// ======================================
+// ======= 21. SQL NodeJS Select From TABLE
+// ======================================
+// var mysql = require('mysql');
+// var con = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "password",
+//   database: "mydb"
+// });
+// con.connect(function(err) {
+//   if (err) throw err;
+//   con.query("SELECT * FROM customers", function (err, result, fields) {
+//     if (err) throw err;
+//     console.log(result);
+//   });
+// });
+
+// ======================================
+// ======= 22. SQL NodeJS WHERE
+// ======================================
+// var mysql = require('mysql');
+// var con = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "password",
+//   database: "mydb"
+// });
+// con.connect(function(err) {
+//   if (err) throw err;
+  // 1. Nomal Query
+  // var sql = "SELECT * FROM customers WHERE address = 'Park Lane 38'";
+  // 2. Query with %
+  // var sql = "SELECT * FROM customers WHERE address LIKE 'S%'";
+  // 3. Query use variable from client have to escape
+  // var adr = 'Mountain 21';
+  // var sql = 'SELECT * FROM customers WHERE address = ' + mysql.escape(adr);
+  // Use this query for 1, 2, 3
+  // con.query(sql, function (err, result, fields) {
+  //   if (err) throw err;
+  //   console.log(result);
+  // });
+  // 4. Escape variabel from users
+  // var adr = 'Mountain 21';
+  // var sql = 'SELECT * FROM customers WHERE address = ?';
+  // con.query(sql, [adr], function (err, result) {
+  //   if (err) throw err;
+  //   console.log(result);
+  // });
+  // 5. Escape many variable
+//   var name = 'Amy';
+//   var adr = 'Mountain 21';
+//   var sql = 'SELECT * FROM customers WHERE name = ? OR address = ?';
+//   con.query(sql, [name, adr], function (err, result) {
+//     if (err) throw err;
+//     console.log(result);
+//   });
+// });
+
+// ======================================
+// ======= 22. SQL NodeJS Order By
+// ======================================
+// var mysql = require('mysql');
+
+// var con = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "password",
+//   database: "mydb"
+// });
+// con.connect(function(err) {
+//   if (err) throw err;
+//   con.query("SELECT * FROM customers ORDER BY name DESC", function (err, result) {
+//     if (err) throw err;
+//     console.log(result);
+//   });
+// });
+
+// ======================================
+// ======= 22. SQL NodeJS Drop Table
+// ======================================
+// var mysql = require('mysql');
+// var con = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "password",
+//   database: "mydb"
+// });
+// con.connect(function(err) {
+//   if (err) throw err;
+//   // var sql = "DROP TABLE customers";
+//   var sql = "DROP TABLE IF EXISTS customers";
+//   con.query(sql, function (err, result) {
+//     if (err) throw err;
+//     console.log("Table deleted");
+//     console.log(result);
+//   });
+// });
+
+// ======================================
+// ======= 22. SQL NodeJS Update Record
+// ======================================
+// var mysql = require('mysql');
+// var con = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "password",
+//   database: "mydb"
+// });
+// con.connect(function(err) {
+//   if (err) throw err;
+//   var sql = "UPDATE customers SET address = 'Canyon 123' WHERE address = 'Valley 345'";
+//   con.query(sql, function (err, result) {
+//     if (err) throw err;
+//     console.log(result.affectedRows + " record(s) updated");
+//   });
+// });
+
+// ======================================
+// ======= 23. SQL NodeJS Limit
+// ======================================
+// var mysql = require('mysql');
+// var con = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "password",
+//   database: "mydb"
+// });
+// con.connect(function(err) {
+//   if (err) throw err;
+//   var sql = "SELECT * FROM customers LIMIT 5";
+//   con.query(sql, function (err, result) {
+//     if (err) throw err;
+//     console.log(result);
+//   });
+// });
+// ======================================
+// ======= 23. SQL NodeJS JOIN
+// ======================================
 var mysql = require('mysql');
 var con = mysql.createConnection({
   host: "localhost",
@@ -326,9 +538,51 @@ var con = mysql.createConnection({
 con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
-  var sql = "CREATE TABLE customers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255))";
+
+  // Table users
+  // var sql = "CREATE TABLE users (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), favorite_product INT)";
+  // con.query(sql, function (err, result) {
+  //   if (err) throw err;
+  //   console.log("Table users created");
+  // });
+  // var sql = "INSERT INTO users (id, name, favorite_product) VALUES ?";
+  // var values = [
+  //   [1,'John', 154],
+  //   [2,'Peter', 154],
+  //   [3,'Amy', 155],
+  //   [4,'Hannah', 156],
+  //   [5,'Michael', 156]
+  // ];
+  // con.query(sql, [values], function (err, result) {
+  //   if (err) throw err;
+  //   console.log("Number of records inserted: " + result.affectedRows);
+  // });
+  //Table products
+  // var sql = "CREATE TABLE products (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255))";
+  // con.query(sql, function (err, result) {
+  //   if (err) throw err;
+  //   console.log("Table products created");
+  // });
+  // var sql = "INSERT INTO products (id, name) VALUES ?";
+  // var values = [
+  //     [154, 'Chocolate Heaven' ],
+  //     [155, 'T Lemons' ],
+  //     [156 ,'Vanilla Dreams' ]
+  // ];
+  // con.query(sql, [values], function (err, result) {
+  //   if (err) throw err;
+  //   console.log("Number of records inserted: " + result.affectedRows);
+  // });
+  //START USE JOIN STATEMENT
+  //Join
+  // var sql = "SELECT users.name AS user, products.name AS favorite FROM users JOIN products ON users.favorite_product = products.id";
+  // Left Join
+  // var sql = "SELECT users.name AS user, products.name AS favorite FROM users LEFT JOIN products ON users.favorite_product = products.id";
+  // Right join
+  var sql = "SELECT users.name AS user, products.name AS favorite FROM users RIGHT JOIN products ON users.favorite_product = products.id";
+
   con.query(sql, function (err, result) {
     if (err) throw err;
-    console.log("Table created");
+    console.log(result);
   });
 });
